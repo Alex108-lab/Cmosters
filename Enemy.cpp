@@ -74,12 +74,12 @@ public:
 class Ninja : public Enemy
 {
 public:
-    // void attack()
-    // {
-    //     cout << getName() << "!!" << endl;
-    //     cout << getLife() << endl;
-    //     cout << getDamage() << endl;
-    // }
+    void attack()
+    {
+        cout << getName() << "!!" << endl;
+        cout << getLife() << endl;
+        cout << getDamage() << endl;
+    }
 };
 
 class Moster : public Enemy

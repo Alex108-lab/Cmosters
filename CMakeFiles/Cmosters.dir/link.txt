@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Cmosters.dir/read_data.cpp.o CMakeFiles/Cmosters.dir/save.cpp.o CMakeFiles/Cmosters.dir/main.cpp.o CMakeFiles/Cmosters.dir/Player.cpp.o CMakeFiles/Cmosters.dir/Enemy.cpp.o -o Cmosters 

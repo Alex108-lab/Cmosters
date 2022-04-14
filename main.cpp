@@ -1,8 +1,12 @@
 #include <iostream>
+#include <string.h>
 #include <cstddef>
 
 #include "./Player.cpp"
 #include "./Enemy.cpp"
+#include "./structs.hpp"
+#include "./save.hpp"
+#include "./read_data.hpp"
 
 using namespace std;
 
@@ -18,25 +22,9 @@ string a[] = {
     "Invocation magic",
 };
 
-int getSize()
-{
-    int i = 0;
-    int r;
-
-    for (; i <= size_t(a); i++)
-    {
-        r = i;
-        cout << "R" << r
-             << endl;
-        cout << i
-             << endl;
-    }
-
-    return r;
-}
-
 int main(int argc, char *argv[])
 {
+    Player_data dat;
 
     Player p;
 
@@ -92,8 +80,28 @@ int main(int argc, char *argv[])
     cout << "Size " << a->length() * 3
          << endl;
 
-    cout << getSize()
-         << endl;
+    dat.name = p1->getName();
+    dat.life = p1->getLife();
+    save_data(dat);
 
+    Player_data *data1;
+    int nums_data;
+
+    data1 = read_data(&nums_data);
+
+    if (nums_data == 0)
+    {
+        printf("\n\tThe file is emtpy!\n");
+        getchar();
+    }
+    else
+    {
+        cout << "dat1 " << data1->name << endl;
+        cout << "dat1 " << data1->life << endl;
+    }
+
+    cout << "dat " << dat.name << endl;
+    cout << "dat " << dat.life << endl;
+    
     return 0;
 }
